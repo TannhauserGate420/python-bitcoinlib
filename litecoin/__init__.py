@@ -47,7 +47,7 @@ class SigNetParams(litecoin.core.CoreSigNetParams):
     MESSAGE_START = b'\x0a\x03\xcf\x40'
     DEFAULT_PORT = 39333
     RPC_PORT = 39332
-    DNS_SEEDS = (("signet.bitcoin.sprovoost.nl", "seed.signet.bitcoin.sprovoost.nl"))
+    DNS_SEEDS = ()
     BASE58_PREFIXES = {'PUBKEY_ADDR':111,
                        'SCRIPT_ADDR':58,
                        'SECRET_KEY' :239}
