@@ -67,15 +67,6 @@ While not always good style, it's often convenient for quick scripts if
 appropriately.
 
 
-# Example Code
-
-See `examples/` directory. For instance this example creates a transaction
-spending a pay-to-script-hash transaction output:
-
-    $ PYTHONPATH=. examples/spend-p2sh-txout.py
-    <hex-encoded transaction>
-
-
 ## Selecting the chain to use
 
 Do the following:
@@ -100,13 +91,3 @@ system, you can run unit tests for multiple Python versions:
     ./runtests.sh
 
 HTML coverage reports can then be found in the htmlcov/ subdirectory.
-
-## Documentation
-
-Sphinx documentation is in the "doc" subdirectory. Run "make help" from there
-to see how to build. You will need the Python "sphinx" package installed.
-
-Currently this is just API documentation generated from the code and
-docstrings. Higher level written docs would be useful, perhaps starting with
-much of this README. Pages are written in reStructuredText and linked from
-index.rst.
