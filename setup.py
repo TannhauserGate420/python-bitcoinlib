@@ -24,6 +24,5 @@ setup(name='python-litecoinlib',
       keywords='litecoin',
       packages=find_packages(),
       zip_safe=False,
-      install_requires=requires,
-      test_suite="litecoin.tests"
-     )
+      install_requires=requires
+)
