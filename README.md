@@ -1,43 +1,40 @@
-# python-bitcoinlib
+# python-litecoinlib
 
-This Python3 library provides an easy interface to the bitcoin data
+This Python3 library provides an easy interface to the litecoin data
 structures and protocol. The approach is low-level and "ground up", with a
-focus on providing tools to manipulate the internals of how Bitcoin works.
-
-"The Swiss Army Knife of the Bitcoin protocol." - Wladimir J. van der Laan
-
+focus on providing tools to manipulate the internals of how litecoin works.
 
 ## Requirements
 
     sudo apt-get install libssl-dev
 
-The RPC interface, `bitcoin.rpc`, is designed to work with Bitcoin Core v0.16.0.
+The RPC interface, `litecoin.rpc`, is designed to work with Litecoin Core v0.18.
 Older versions may work but there do exist some incompatibilities.
 
 
 ## Structure
 
-Everything consensus critical is found in the modules under bitcoin.core. This
+Everything consensus critical is found in the modules under litecoin.core. This
 rule is followed pretty strictly, for instance chain parameters are split into
 consensus critical and non-consensus-critical.
 
-    bitcoin.core            - Basic core definitions, datastructures, and
+    litecoin.core            - Basic core definitions, datastructures, and
                               (context-independent) validation
-    bitcoin.core.key        - ECC pubkeys
-    bitcoin.core.script     - Scripts and opcodes
-    bitcoin.core.scripteval - Script evaluation/verification
-    bitcoin.core.serialize  - Serialization
+    litecoin.core.key        - ECC pubkeys
+    litecoin.core.script     - Scripts and opcodes
+    litecoin.core.scripteval - Script evaluation/verification
+    litecoin.core.serialize  - Serialization
 
-In the future the bitcoin.core may use the Satoshi sourcecode directly as a
+In the future the litecoin.core may use the Satoshi sourcecode directly as a
 library. Non-consensus critical modules include the following:
 
-    bitcoin          - Chain selection
-    bitcoin.base58   - Base58 encoding
-    bitcoin.bloom    - Bloom filters (incomplete)
-    bitcoin.net      - Network communication (in flux)
-    bitcoin.messages - Network messages (in flux)
-    bitcoin.rpc      - Bitcoin Core RPC interface support
-    bitcoin.wallet   - Wallet-related code, currently Bitcoin address and
+    litecoin          - Chain selection
+    litecoin.base58   - Base58 encoding
+    litecoin.bloom    - Bloom filters (incomplete)
+    litecoin.net      - Network communication (in flux)
+    litecoin.messages - Network messages (in flux)
+    litecoin.rpc      - Litecoin Core RPC interface support
+    litecoin.wallet   - Wallet-related code, currently Litecoin address and
                        private key support
 
 Effort has been made to follow the Satoshi source relatively closely, for
@@ -48,17 +45,17 @@ CBlockHeader, nValue etc. Otherwise Python naming conventions are followed.
 
 ## Mutable vs. Immutable objects
 
-Like the Bitcoin Core codebase CTransaction is immutable and
-CMutableTransaction is mutable; unlike the Bitcoin Core codebase this
+Like the Litecoin Core codebase CTransaction is immutable and
+CMutableTransaction is mutable; unlike the Litecoin Core codebase this
 distinction also applies to COutPoint, CTxIn, CTxOut, and CBlock.
 
 
 ## Endianness Gotchas
 
-Rather confusingly Bitcoin Core shows transaction and block hashes as
+Rather confusingly Litecoin Core shows transaction and block hashes as
 little-endian hex rather than the big-endian the rest of the world uses for
-SHA256. python-bitcoinlib provides the convenience functions x() and lx() in
-bitcoin.core to convert from big-endian and little-endian hex to raw bytes to
+SHA256. python-litecoinlib provides the convenience functions x() and lx() in
+litecoin.core to convert from big-endian and little-endian hex to raw bytes to
 accommodate this. In addition see b2x() and b2lx() for conversion from bytes to
 big/little-endian hex.
 
@@ -83,8 +80,8 @@ spending a pay-to-script-hash transaction output:
 
 Do the following:
 
-    import bitcoin
-    bitcoin.SelectParams(NAME)
+    import litecoin
+    litecoin.SelectParams(NAME)
 
 Where NAME is one of 'testnet', 'mainnet', 'signet', or 'regtest'. The chain currently
 selected is a global variable that changes behavior everywhere, just like in
@@ -93,7 +90,7 @@ the Satoshi codebase.
 
 ## Unit tests
 
-Under bitcoin/tests using test data from Bitcoin Core. To run them:
+Under litecoin/tests using test data from Litecoin Core. To run them:
 
     python3 -m unittest discover
 
