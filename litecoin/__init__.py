@@ -21,12 +21,11 @@ class MainParams(litecoin.core.CoreMainParams):
     MESSAGE_START = b'\xfb\xc0\xb6\xdb'
     DEFAULT_PORT = 9333
     RPC_PORT = 9332
-    DNS_SEEDS = (('bitcoin.sipa.be', 'seed.bitcoin.sipa.be'),
-                 ('bluematt.me', 'dnsseed.bluematt.me'),
-                 ('dashjr.org', 'dnsseed.bitcoin.dashjr.org'),
-                 ('bitcoinstats.com', 'seed.bitcoinstats.com'),
-                 ('xf2.org', 'bitseed.xf2.org'),
-                 ('bitcoin.jonasschnelli.ch', 'seed.bitcoin.jonasschnelli.ch'))
+    DNS_SEEDS = ('seed-a.litecoin.loshan.co.uk',
+                 'dnsseed.thrasher.io',
+                 'dnsseed.litecointools.com',
+                 'dnsseed.litecoinpool.org',
+                 'dnsseed.koin-project.com')
     BASE58_PREFIXES = {'PUBKEY_ADDR':48,
                        'SCRIPT_ADDR':50,
                        'SECRET_KEY' :176}
@@ -36,10 +35,9 @@ class TestNetParams(litecoin.core.CoreTestNetParams):
     MESSAGE_START = b'\xfd\xd2\xc8\xf1'
     DEFAULT_PORT = 19333
     RPC_PORT = 19332
-    DNS_SEEDS = (('testnetbitcoin.jonasschnelli.ch', 'testnet-seed.bitcoin.jonasschnelli.ch'),
-                 ('petertodd.org', 'seed.tbtc.petertodd.org'),
-                 ('bluematt.me', 'testnet-seed.bluematt.me'),
-                 ('bitcoin.schildbach.de', 'testnet-seed.bitcoin.schildbach.de'))
+    DNS_SEEDS = ('testnet-seed.litecointools.com',
+                 'seed-b.litecoin.loshan.co.uk',
+                 'dnsseed-testnet.thrasher.io')
     BASE58_PREFIXES = {'PUBKEY_ADDR':111,
                        'SCRIPT_ADDR':58,
                        'SECRET_KEY' :239}
