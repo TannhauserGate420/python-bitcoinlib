@@ -77,17 +77,3 @@ Do the following:
 Where NAME is one of 'testnet', 'mainnet', 'signet', or 'regtest'. The chain currently
 selected is a global variable that changes behavior everywhere, just like in
 the Satoshi codebase.
-
-
-## Unit tests
-
-Under litecoin/tests using test data from Litecoin Core. To run them:
-
-    python3 -m unittest discover
-
-Alternately, if Tox (see https://tox.readthedocs.org/) is available on your
-system, you can run unit tests for multiple Python versions:
-
-    ./runtests.sh
-
-HTML coverage reports can then be found in the htmlcov/ subdirectory.
